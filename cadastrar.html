@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Novo Bloco</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f6ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+
+    label {
+      text-align: left;
+      font-weight: bold;
+      color: #1e40af;
+    }
+
+
+    input {
+      padding: 10px;
+      border: 1px solid #93c5fd;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+
+    input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 6px #93c5fd;
+    }
+
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Cadastrar Novo Bloco</h2>
+    <form id="formCadastro">
+      <label>Nome do Bloco:
+        <input type="text" name="bloco" required>
+      </label>
+      <label>Apartamentos:
+        <input type="number" name="apartamentos" required>
+      </label>
+      <label>Síndico:
+        <input type="text" name="sindico" required>
+      </label>
+      <label>Garagem:
+        <input type="number" name="garagem" required>
+      </label>
+      <label>Andares:
+        <input type="number" name="andares" required>
+      </label>
+      <button type="submit">Salvar</button>
+    </form>
+    <a href="index.html">⬅ Voltar</a>
+  </div>
+
+
+  <script>
+    document.getElementById("formCadastro").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("✅ Novo bloco cadastrado!");
+      window.location.href = "index.html"; // volta para a página principal
+    });
+  </script>
+</body>
+</html>
