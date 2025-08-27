@@ -34,13 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
   
-    // FUNÇÃO DE EDITAR
+
     function editarItem(event) {
       const row = event.target.closest("tr");
       if (!row) return;
   
   
-      // Itera pelas células, exceto a última (ações)
+
       for (let i = 0; i < row.cells.length - 1; i++) {
         const valorAtual = row.cells[i].innerText;
         const novoValor = prompt(`Editar valor:`, valorAtual);
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
   
-    // FUNÇÃO DE EXCLUIR
+ 
     function excluirItem(event) {
       const row = event.target.closest("tr");
       if (!row) return;
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
   
-    // BOTÕES GLOBAIS
+  
     if (btnEditar) {
       btnEditar.addEventListener("click", () => {
         if (tables.length === 0) {
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const rows = Array.from(table.querySelectorAll("tr:not(:first-child)"));
           const row = rows.find(r => r.cells[0].innerText === numero);
           if (row) {
-            // Cria um evento falso para simular clique no botão da linha
+       
             editarItem({ target: row.querySelector("td") });
           } else {
             alert("Item não encontrado!");
@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
   
-    // BOTÕES INDIVIDUAIS DAS TABELAS
     document.querySelectorAll(".editBtn").forEach(btn => btn.addEventListener("click", editarItem));
     document.querySelectorAll(".deleteBtn").forEach(btn => btn.addEventListener("click", excluirItem));
   });
