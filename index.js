@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const tables = document.querySelectorAll("table");
   
   
-    // Detecta a página atual pelo nome do arquivo
+    
     const pagina = window.location.pathname.split("/").pop();
   
   
-    // FUNÇÃO DE CADASTRO
+    
     if (btnCadastrar) {
       btnCadastrar.addEventListener("click", () => {
         switch (pagina) {
