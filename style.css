@@ -83,7 +83,7 @@
   }
   
   .date.active {
-    background: #10b981; /* verde destaque */
+    background: #10b981; 
   }
   
  
@@ -215,7 +215,7 @@
     background: #b91c1c;
   }
   
-  /* Botões dentro da tabela */
+  
   .editBtn, .deleteBtn {
     padding: 6px 10px;
     border-radius: 5px;
