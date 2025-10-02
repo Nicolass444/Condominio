@@ -151,10 +151,14 @@ app.post('/cadastrar-tipos-manutencao', cadastrarTipoManutencao);
 
 
 async function cadastrarPagamento(req, res) {
-  const { morador_id, valor, data_pagamento } = req.body;
+  const morador_id    = req.body.morador_id === '' ? null : Number(req.body.morador_id);
+  const valor         = req.body.valor === '' ? null : Number(req.body.valor);
+  const data_pagamento= String(req.body.data_pagamento || '').trim();
   if (!morador_id || !valor || !data_pagamento)
     return res.status(400).send('morador_id, valor e data_pagamento são obrigatórios');
-  const referencia = String(data_pagamento).slice(0, 7); 
+
+  const referencia = data_pagamento.slice(0,7); // AAAA-MM
+
   try {
     const conn = await pool.getConnection();
     await conn.query(
@@ -170,6 +174,7 @@ async function cadastrarPagamento(req, res) {
 }
 app.post('/cadastrar-pagamento', cadastrarPagamento);
 app.post('/cadastrar-registro-pagamento', cadastrarPagamento);
+
 
 
 async function cadastrarManutencao(req, res) {
@@ -238,4 +243,3 @@ app.get('/api/blocos', async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`🚀 http://localhost:${PORT}`));
-
