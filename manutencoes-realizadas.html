@@ -2,85 +2,28 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🛠️ Manutenções Realizadas</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .btn-container {
-      text-align: right;
-      margin: 10px 0 20px 0;
-    }
-    .btn-container button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      margin-left: 5px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .btn-container button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <title>Cadastrar Manutenção</title>
+  <style>body{font-family:Arial,sans-serif;background:#f0f6ff;margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh}.container{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1);width:400px;text-align:center}h2{color:#1e3a8a;margin-bottom:20px}form{display:flex;flex-direction:column;gap:15px}label{text-align:left;font-weight:bold;color:#1e40af}input{padding:10px;border:1px solid #93c5fd;border-radius:8px;font-size:14px}button{background:#2563eb;color:#fff;border:none;padding:12px;border-radius:8px;font-size:16px;cursor:pointer}button:hover{background:#1d4ed8}a{display:inline-block;margin-top:20px;color:#2563eb;text-decoration:none;font-weight:bold}</style>
 </head>
 <body>
-  <header>
-  <h1>Manutenções Realizadas</h1>
-  <div class="btn-top-container">
-    <button class="btn-cadastrar">➕ Cadastrar</button>
-    <button class="btn-editar">✏ Editar</button>
-    <button class="btn-excluir">🗑 Excluir</button>
-  </div>
-</header>
-
-
-  <main>
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Data</th>
-          <th>Bloco</th>
-          <th>Apartamento</th>
-          <th>Tipo de Manutenção</th>
-          <th>Responsável</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>02/08/2025</td>
-          <td>Bloco A</td>
-          <td>Ap 101</td>
-          <td>Troca de Lâmpadas</td>
-          <td>Carlos Souza</td>
-          <td>✅ Concluído</td>
-        </tr>
-        <tr>
-          <td>05/08/2025</td>
-          <td>Bloco B</td>
-          <td>Ap 202</td>
-          <td>Conserto de Encanamento</td>
-          <td>Marcos Pereira</td>
-          <td>✅ Concluído</td>
-        </tr>
-        <tr>
-          <td>10/08/2025</td>
-          <td>Bloco C</td>
-          <td>Ap 303</td>
-          <td>Reparo de Portão</td>
-          <td>João Mendes</td>
-          <td>✅ Concluído</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-
-
-  <footer>
+  <div class="container">
+    <h2>Cadastrar Manutenção</h2>
+    <form action="/cadastrar-manutencao" method="POST">
+      <label>Descrição:
+        <input type="text" name="descricao" required>
+      </label>
+      <label>Data:
+        <input type="date" name="data" required>
+      </label>
+      <label>Custo:
+        <input type="number" step="0.01" name="custo" required>
+      </label>
+      <label>ID do Tipo:
+        <input type="number" name="tipo_id" required>
+      </label>
+      <button type="submit">Salvar</button>
+    </form>
     <a href="index.html">⬅ Voltar</a>
-   
-  </footer>
+  </div>
 </body>
 </html>
