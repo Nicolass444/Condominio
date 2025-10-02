@@ -6,10 +6,20 @@
   <title>PlaySquare - Condomínio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+  
+    .form-section { display: none; margin-top: 24px; }
+    .form-section form { display: grid; gap: 8px; max-width: 420px; }
+    .form-section label { display: grid; gap: 4px; }
+    .form-section input, .form-section button { padding: 8px; }
+    .muted { color: #666; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>PlaySquare - Condomínio </h1>
+    <h1>PlaySquare - Condomínio</h1>
+    <p class="muted">Use os cards abaixo ou acesse diretamente /moradores, /blocos, etc.</p>
+
     <div class="search-filter">
       <input type="text" placeholder="Pesquisar bloco, apartamento, morador...">
       <button class="filter-btn">Filtrar</button>
@@ -22,65 +32,192 @@
     </div>
   </header>
 
-
   <main>
    
-    <a href="blocos.html" class="event-link">
-      <div class="event-card">
-        <img src="blocos.jpg" alt="Blocos" class="event-img">
-        <h3>🏢 Blocos</h3>
-        <span class="tag">Manutenção</span>
-      </div>
-    </a>
+    <div id="cards">
+      <a href="/blocos" class="event-link" data-route="/blocos">
+        <div class="event-card">
+          <img src="blocos.jpg" alt="Blocos" class="event-img">
+          <h3>🏢 Blocos</h3>
+          <span class="tag">Manutenção</span>
+        </div>
+      </a>
 
+      <a href="/apartamentos" class="event-link" data-route="/apartamentos">
+        <div class="event-card">
+          <img src="apartamentos.jpg" alt="Apartamentos" class="event-img">
+          <h3>🏠 Apartamentos</h3>
+          <span class="tag">Limpeza</span>
+        </div>
+      </a>
 
-    <a href="apartamentos.html" class="event-link">
-      <div class="event-card">
-        <img src="apartamentos.jpg" alt="Apartamentos" class="event-img">
-        <h3>🏠 Apartamentos</h3>
-        <span class="tag">Limpeza</span>
-      </div>
-    </a>
+      <a href="/moradores" class="event-link" data-route="/moradores">
+        <div class="event-card">
+          <img src="moradores.jpg" alt="Moradores" class="event-img">
+          <h3>👥 Moradores</h3>
+          <span class="tag">Reunião Comunitária</span>
+        </div>
+      </a>
 
+      <a href="/registro-pagamento" class="event-link" data-route="/registro-pagamento">
+        <div class="event-card">
+          <img src="pagamentos.jpg" alt="Pagamentos" class="event-img">
+          <h3>💳 Registrar Pagamentos</h3>
+          <span class="tag">Financeiro</span>
+        </div>
+      </a>
+
+      <a href="/tipos-manutencao" class="event-link" data-route="/tipos-manutencao">
+        <div class="event-card">
+          <img src="tipos-manutencao.jpg" alt="Tipos de Manutenção" class="event-img">
+          <h3>🛠️ Tipos de Manutenção</h3>
+          <span class="tag">Cadastro</span>
+        </div>
+      </a>
+
+      <a href="/manutencoes-realizadas" class="event-link" data-route="/manutencoes-realizadas">
+        <div class="event-card">
+          <img src="manutencoes-realizadas.jpg" alt="Manutenções Realizadas" class="event-img">
+          <h3>📋 Manutenções Realizadas</h3>
+          <span class="tag">Histórico</span>
+        </div>
+      </a>
+    </div>
+
+  
 
    
-    <a href="moradores.html" class="event-link">
-      <div class="event-card">
-        <img src="moradores.jpg" alt="Moradores" class="event-img">
-        <h3>👥 Moradores</h3>
-        <span class="tag">Reunião Comunitária</span>
-      </div>
-    </a>
-
-
-   
-    <a href="registro-pagamento.html" class="event-link">
-      <div class="event-card">
-        <img src="pagamentos.jpg" alt="Pagamentos" class="event-img">
-        <h3>💳 Registrar Pagamentos</h3>
-        <span class="tag">Financeiro</span>
-      </div>
-    </a>
-
+    <section id="sec-moradores" class="form-section" aria-labelledby="ttl-moradores">
+      <h2 id="ttl-moradores">Cadastrar Morador</h2>
+      <form action="/cadastrar-morador" method="POST" autocomplete="on">
+        <label>Nome* <input type="text" name="nome" required /></label>
+        <label>Apartamento (nº)* <input type="text" name="apartamento" required /></label>
+        <label>Bloco (nome)* <input type="text" name="bloco" required /></label>
+        <label>Telefone <input type="tel" name="telefone" inputmode="tel" /></label>
+        <label>E-mail <input type="email" name="email" /></label>
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+    
+    
 
    
-    <a href="tipos-manutencao.html" class="event-link">
-      <div class="event-card">
-        <img src="tipos-manutencao.jpg" alt="Tipos de Manutenção" class="event-img">
-        <h3>🛠️ Tipos de Manutenção</h3>
-        <span class="tag">Cadastro</span>
-      </div>
-    </a>
-
-
+    <section id="sec-blocos" class="form-section" aria-labelledby="ttl-blocos">
+      <h2 id="ttl-blocos">Cadastrar Bloco</h2>
+      <form action="/cadastrar-bloco" method="POST" autocomplete="on">
+        <label>Nome do bloco* <input type="text" name="nome" required /></label>
+        <label>Descrição <input type="text" name="descricao" /></label>
+        <label>Qtd. de Apartamentos <input type="number" name="quantidade_ap" min="0" step="1" /></label>
+        <label>Síndico <input type="text" name="sindico" /></label>
+        <label>Telefone <input type="tel" name="telefone" inputmode="tel" /></label>
+        <label>Pavimentos <input type="number" name="pavimentos" min="0" step="1" /></label>
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+    
    
-    <a href="manutencoes-realizadas.html" class="event-link">
-      <div class="event-card">
-        <img src="manutencoes-realizadas.jpg" alt="Manutenções Realizadas" class="event-img">
-        <h3>📋 Manutenções Realizadas</h3>
-        <span class="tag">Histórico</span>
-      </div>
-    </a>
+    <section id="sec-apartamentos" class="form-section" aria-labelledby="ttl-apartamentos">
+      <h2 id="ttl-apartamentos">Cadastrar Apartamento</h2>
+      <form action="/cadastrar-apartamento" method="POST" autocomplete="on">
+        <label>Número* <input type="text" name="numero" required /></label>
+        <label>Bloco (ID)* <input type="number" name="bloco_id" required min="1" step="1" /></label>
+        <label>Metragem (m²) <input type="number" name="metragem" min="0" step="0.01" /></label>
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+    
+
+    
+    <section id="sec-manutencoes-realizadas" class="form-section" aria-labelledby="ttl-manutencoes">
+      <h2 id="ttl-manutencoes">Cadastrar Manutenção</h2>
+      <form action="/cadastrar-manutencoes-realizadas" method="POST" autocomplete="on">
+        <label>Descrição* <input type="text" name="descricao" required /></label>
+        <label>Data* <input type="date" name="data" required /></label>
+        <label>Tipo (ID)* <input type="number" name="tipo_id" required min="1" step="1" /></label>
+        <label>Bloco (ID) <input type="number" name="bloco_id" min="1" step="1" /></label>
+        <label>Apartamento (ID) <input type="number" name="apartamento_id" min="1" step="1" /></label>
+        <label>Responsável <input type="text" name="responsavel" /></label>
+        <label>Observação <input type="text" name="observacao" /></label>
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+    
+ 
+    <section id="sec-registro-pagamento" class="form-section" aria-labelledby="ttl-pagamentos">
+      <h2 id="ttl-pagamentos">Registrar Pagamento</h2>
+      <form action="/cadastrar-registro-pagamento" method="POST" autocomplete="on">
+        <label>Morador (ID)* <input type="number" name="morador_id" required min="1" step="1" /></label>
+        <label>Valor* <input type="number" name="valor" required min="0" step="0.01" /></label>
+        <label>Data do pagamento* <input type="date" name="data_pagamento" required /></label>
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+    
+
+  
+    <section id="sec-tipos-manutencao" class="form-section" aria-labelledby="ttl-tipos">
+      <h2 id="ttl-tipos">Cadastrar Tipo de Manutenção</h2>
+      <form action="/cadastrar-tipos-manutencao" method="POST" autocomplete="on">
+        <label>Nome do tipo* <input type="text" name="nome" required /></label>
+        <label>Descrição <input type="text" name="descricao" /></label>
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+    
   </main>
+
+  <script>
+    
+    function renderByPath(pathname) {
+      const map = {
+        "/moradores": "sec-moradores",
+        "/blocos": "sec-blocos",
+        "/apartamentos": "sec-apartamentos",
+        "/manutencoes-realizadas": "sec-manutencoes-realizadas",
+        "/registro-pagamento": "sec-registro-pagamento",
+        "/tipos-manutencao": "sec-tipos-manutencao"
+      };
+
+      const cards = document.getElementById('cards');
+      document.querySelectorAll('.form-section').forEach(s => s.style.display = 'none');
+
+      const secId = map[pathname];
+      if (secId) {
+        const sec = document.getElementById(secId);
+        if (sec) sec.style.display = 'block';
+        if (cards) cards.style.display = 'none';
+      } else {
+        if (cards) cards.style.display = '';
+      }
+    }
+
+   
+    function setupClientRouting() {
+      document.querySelectorAll('a.event-link[data-route]').forEach(a => {
+        a.addEventListener('click', (e) => {
+        
+          if (e.metaKey || e.ctrlKey) return;
+          e.preventDefault();
+          const route = a.getAttribute('data-route') || a.getAttribute('href');
+          if (route) {
+            history.pushState({}, '', route);
+            renderByPath(route);
+          }
+        });
+      });
+
+
+      window.addEventListener('popstate', () => {
+        renderByPath(window.location.pathname);
+      });
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderByPath(window.location.pathname);
+      setupClientRouting();
+    });
+  </script>
 </body>
 </html>
+
