@@ -2,120 +2,19 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🛠️ Tipos de Manutenção</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .btn-container {
-      text-align: right;
-      margin: 10px 0 20px 0;
-    }
-    .btn-container button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      margin-left: 5px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .btn-container button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <title>Cadastrar Tipo de Manutenção</title>
+  <style>body{font-family:Arial,sans-serif;background:#f0f6ff;margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh}.container{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1);width:400px;text-align:center}h2{color:#1e3a8a;margin-bottom:20px}form{display:flex;flex-direction:column;gap:15px}label{text-align:left;font-weight:bold;color:#1e40af}input{padding:10px;border:1px solid #93c5fd;border-radius:8px;font-size:14px}button{background:#2563eb;color:#fff;border:none;padding:12px;border-radius:8px;font-size:16px;cursor:pointer}button:hover{background:#1d4ed8}a{display:inline-block;margin-top:20px;color:#2563eb;text-decoration:none;font-weight:bold}</style>
 </head>
 <body>
-  <header>
-  <h1>Tipos de Manutenções</h1>
-  <div class="btn-top-container">
-    <button class="btn-cadastrar">➕ Cadastrar</button>
-    <button class="btn-editar">✏ Editar</button>
-    <button class="btn-excluir">🗑 Excluir</button>
-  </div>
-</header>
-
-
-  <main>
-    <table>
-      <caption>Cadastro de Tipos de Manutenção</caption>
-      <tr>
-        <th>Tipo</th>
-        <th>Descrição</th>
-        <th>Periodicidade</th>
-        <th>Responsável</th>
-      </tr>
-
-
-      <tr>
-        <td>Limpeza Geral</td>
-        <td>Limpeza de áreas comuns, corredores, escadas e halls.</td>
-        <td>Semanal</td>
-        <td>Equipe Interna</td>
-      </tr>
-      <tr>
-        <td>Pintura</td>
-        <td>Pintura de paredes, muros e áreas externas.</td>
-        <td>Anual</td>
-        <td>Empresa Terceirizada</td>
-      </tr>
-      <tr>
-        <td>Jardinagem</td>
-        <td>Manutenção de jardins, poda de árvores e flores.</td>
-        <td>Mensal</td>
-        <td>Equipe Interna</td>
-      </tr>
-      <tr>
-        <td>Hidráulica</td>
-        <td>Reparo de encanamentos, vazamentos e torneiras.</td>
-        <td>Quando necessário</td>
-        <td>Empresa Terceirizada</td>
-      </tr>
-      <tr>
-        <td>Elétrica</td>
-        <td>Manutenção de fiação elétrica, iluminação e tomadas.</td>
-        <td>Quando necessário</td>
-        <td>Empresa Terceirizada</td>
-      </tr>
-      <tr>
-        <td>Ar Condicionado</td>
-        <td>Revisão e limpeza de aparelhos de ar condicionado das áreas comuns.</td>
-        <td>Semestral</td>
-        <td>Empresa Terceirizada</td>
-      </tr>
-      <tr>
-        <td>Elevadores</td>
-        <td>Manutenção preventiva e corretiva dos elevadores.</td>
-        <td>Mensal/Trimestral</td>
-        <td>Empresa Especializada</td>
-      </tr>
-      <tr>
-        <td>Segurança</td>
-        <td>Verificação de câmeras, portões e sistemas de alarme.</td>
-        <td>Mensal</td>
-        <td>Equipe Interna</td>
-      </tr>
-      <tr>
-        <td>Limpeza de Piscina</td>
-        <td>Tratamento químico e limpeza da piscina.</td>
-        <td>Semanal</td>
-        <td>Equipe Interna</td>
-      </tr>
-      <tr>
-        <td>Manutenção de Playground</td>
-        <td>Revisão e reparo de brinquedos e equipamentos de lazer.</td>
-        <td>Mensal</td>
-        <td>Equipe Interna</td>
-      </tr>
-
-
-    </table>
-  </main>
-
-
-  <footer>
+  <div class="container">
+    <h2>Cadastrar Tipo de Manutenção</h2>
+    <form action="/cadastrar-tipo-manutencao" method="POST">
+      <label>Nome do Tipo:
+        <input type="text" name="nome" required>
+      </label>
+      <button type="submit">Salvar</button>
+    </form>
     <a href="index.html">⬅ Voltar</a>
-  <script src="index.js"></script>
-  </footer>
+  </div>
 </body>
 </html>
