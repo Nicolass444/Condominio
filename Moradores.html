@@ -2,18 +2,24 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Cadastrar Apartamento</title>
+  <title>Cadastrar Morador</title>
   <style>*{box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f0f6ff;margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh}.container{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1);width:400px;text-align:center}h2{color:#1e3a8a;margin-bottom:20px}form{display:flex;flex-direction:column;gap:15px}label{text-align:left;font-weight:bold;color:#1e40af}input{padding:10px;border:1px solid #93c5fd;border-radius:8px;font-size:14px}button{background:#2563eb;color:#fff;border:none;padding:12px;border-radius:8px;font-size:16px;cursor:pointer}button:hover{background:#1d4ed8}a{display:inline-block;margin-top:20px;color:#2563eb;text-decoration:none;font-weight:bold}</style>
 </head>
 <body>
   <div class="container">
-    <h2>Cadastrar Apartamento</h2>
-    <form action="/cadastrar-apartamento" method="POST">
-      <label>Número do Apartamento:
-        <input type="text" name="numero" required>
+    <h2>Cadastrar Morador</h2>
+    <form action="/cadastrar-morador" method="POST">
+      <label>Nome:
+        <input type="text" name="nome" required>
       </label>
-      <label>ID do Bloco:
-        <input type="number" name="bloco_id" required>
+      <label>Apartamento:
+        <input type="text" name="apartamento" required>
+      </label>
+      <label>Bloco:
+        <input type="text" name="bloco" required>
+      </label>
+      <label>Telefone:
+        <input type="text" name="telefone">
       </label>
       <button type="submit">Salvar</button>
     </form>
@@ -21,4 +27,3 @@
   </div>
 </body>
 </html>
-
